@@ -19,8 +19,16 @@ const Input =() =>{
     setEnteredAge(event.target.value);
   }
  
-    const SubmitHandler =(event)=>{
+    const SubmitHandler =(event)=>{ 
         event.preventDefault();
+        if(enteredAge.trim().length===0 || enteredAge.trim()===0)
+        {
+          return;
+        }
+        if (enteredAge<1){
+          return;
+        }
+        console.log(enteredName,enteredAge);
         setEnteredAge('');
         setEnteredName('');
         };
