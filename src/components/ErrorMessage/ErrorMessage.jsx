@@ -1,7 +1,7 @@
 
 import Button from "../UI/Button/Button";
 import styled from "styled-components";
-
+import { useState } from "react";
 const Container= styled.div`
 
 div{
@@ -41,10 +41,13 @@ header {
     
 `;
 
-const ErrorMessage =(props) => {
 
+const ErrorMessage=(props)=>{
 return(
-    <Container>
+
+   
+   
+      <Container>
         <div>
 <header>
 <h2>
@@ -53,14 +56,14 @@ return(
 </header>
 <p>{props.message}</p>
 <footer>
-    <Button>OK</Button>
+    <Button onClick={props.onOk}>OK</Button>
 </footer>
 </div>
     </Container>
 
 );
+}
 
 
-};
 
 export default ErrorMessage;

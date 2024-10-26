@@ -43,9 +43,15 @@ const Input =() =>{
         setEnteredName('');
         };
 
+        const errorHandler=()=>
+        {
+          setError(null);
+
+        }
+
     return(
      <div> 
-      {error &&<ErrorMessage title={error.title} message={error.message} />}
+      {error &&<ErrorMessage title={error.title} message={error.message} onOk={errorHandler} />}
 <Card>
     <form onSubmit={SubmitHandler}>
         <div>
