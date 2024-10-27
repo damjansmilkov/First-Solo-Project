@@ -61,7 +61,7 @@ return(
 
    
    
-      <Backdrop>
+      <Backdrop onClick={props.onOk}>
         <Container>
 <Header>
 <h2>

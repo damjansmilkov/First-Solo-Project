@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       
-    <Input/>
+    <Input />
     <UsersList users={[]}/>
     </div>
   );

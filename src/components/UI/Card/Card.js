@@ -7,9 +7,7 @@ const Cardstyle = styled.div`
   padding: 2rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  height: 15rem;
-
-  
+  height: 12rem;
 `;
 
 const Card = (props) => {

@@ -8,7 +8,7 @@ const Inputstyle=styled.input`
 width: 100%;
 `;
 
-const Input =() =>{
+const Input =(props) =>{
 
     const [enteredName, setEnteredName] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
@@ -23,13 +23,20 @@ const Input =() =>{
  
     const SubmitHandler =(event)=>{ 
         event.preventDefault();
+        
+        const userInput={
+          Name: enteredName,
+          Age: enteredAge
+
+
+        }
         if(enteredAge.trim().length===0 || enteredAge.trim()===0)
         {
           setError({
             title: 'Invalid input',
             message: ' Please enter a valid name and age (non-empty values).'
           })
-          return ;
+          return;
         }
         if (enteredAge<1){
           setError({
@@ -38,6 +45,8 @@ const Input =() =>{
           })
           return;
         }
+       
+      
         console.log(enteredName,enteredAge);
         setEnteredAge('');
         setEnteredName('');
@@ -56,13 +65,13 @@ const Input =() =>{
     <form onSubmit={SubmitHandler}>
         <div>
         
-<label htmlFor="Name">Name</label>
+<label htmlFor="Name"><b>Name</b></label>
 <Inputstyle id='Name'type='text'
 value={enteredName}
 onChange={nameChangeHandler}/>
         </div>
         <div>
-<label htmlFor="Age">Age</label>
+<label htmlFor="Age"><b>Age</b></label>
 <Inputstyle id='Age' type='number'
 value={enteredAge}
 onChange={ageChangeHandler}/>
