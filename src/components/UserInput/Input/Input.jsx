@@ -24,12 +24,7 @@ const Input =(props) =>{
     const SubmitHandler =(event)=>{ 
         event.preventDefault();
         
-        const userInput={
-          Name: enteredName,
-          Age: enteredAge
-
-
-        }
+        
         if(enteredAge.trim().length===0 || enteredAge.trim()===0)
         {
           setError({
@@ -47,7 +42,7 @@ const Input =(props) =>{
         }
        
       
-        console.log(enteredName,enteredAge);
+        props.onAddUser(enteredName, enteredAge);
         setEnteredAge('');
         setEnteredName('');
         };
